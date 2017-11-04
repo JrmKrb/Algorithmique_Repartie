@@ -36,7 +36,27 @@
 \end{frame}
 \subsection{Hypotheses}
 \begin{frame}
+	There are a few hypotheses on the robots:
+	\begin{itemize}
+		\item<2-> Robots are identical. No distinction, same algorithm,
+		\item<3-> Robots are oblivious. They have no memory of their moves,
+		\item<4-> Robots cannot communicated directly.
+	\end{itemize}
+	
+	\uncover<5->{However they can observe the positions of the other robots, and it is one of those two cases:}
+	\begin{itemize}
+		\item<6-> Global-Strong Multiplicity Detection
+		\item<7-> Local-Strong and Global-Weak Multiplicity Detection
+	\end{itemize}
 \end{frame}
+\begin{frame}
+	The scheduler can be of two types:
+	\begin{itemize}
+		\item<2->[SSYNC] Semi-Synchronous - For each round, a set of robots are activated/executed at the same time.
+		\item<3->[ASYNC] Asynchronous - The robots are activated/executed asynchronously
+	\end{itemize}
+\end{frame}
+
 \subsection{Problems}
 \begin{frame}
 	\uncover<1->{
@@ -45,7 +65,7 @@
 	
 	\uncover<2->{
 	\textbf{Orientation Problem:}
-	The goal of the set formation problem is to make the robots gather in a configuration such that:}
+	The goal of the set formation problem is to make the robots gather in a configuration such that:} 
 	
 	\begin{itemize}
 		\item<3-> There is exactly one tower node
@@ -60,11 +80,6 @@
 	\uncover<6->{
 	\textbf{Set formation problem:}
 	The goal of the set formation problem is to gather the robots in a specific predefined configuration.}
-\end{frame}
-
-\subsubsection{Set Formation Problem}
-\begin{frame}
-	
 \end{frame}
 
 \section{Weaker models}
