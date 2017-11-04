@@ -3,10 +3,11 @@
 \usepackage[frenchb]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
 \usetheme{Warsaw}
 
-\title{Maximum Probability Shortest Path Problem}
+\title{Algorithmique Répartie}
 \author{Jeremy Krebs - Guillaume Soulié}
 \institute{Université Paris Saclay}
 \date{\today}
@@ -24,52 +25,59 @@
 % ----------------------------
 
 
-\section{State of the art}
 
+\section{Introduction}
+\subsection{State of the Art}
+\subsubsection{Motivations}
 \begin{frame}
-Blablabla known problem, lots of industrial applications, transportation of merchandise, Food delivery, start-ups (Shippeo, maybe even Deliveroo and Foodora)
+\end{frame}
+\subsubsection{Related work}
+\begin{frame}
+\end{frame}
+\subsection{Hypotheses}
+\begin{frame}
+\end{frame}
+\subsection{Problems}
+\begin{frame}
+	\uncover<1->{
+	\textbf{Gathering Problem:}
+	The goal of the gathering problem is to group all the robots on the same node.}
+	
+	\uncover<2->{
+	\textbf{Orientation Problem:}
+	The goal of the set formation problem is to make the robots gather in a configuration such that:}
+	
+	\begin{itemize}
+		\item<3-> There is exactly one tower node
+		\item<4-> There is a 1-robot block of size l
+	\end{itemize}
+
+	\uncover<5->{
+	\begin{figure}[h]
+   		\includegraphics[width=0.3\textwidth]{images/orientation_problem.png}
+	\end{figure}}
+	
+	\uncover<6->{
+	\textbf{Set formation problem:}
+	The goal of the set formation problem is to gather the robots in a specific predefined configuration.}
 \end{frame}
 
-
-
-\section{Problem}
-\subsection{Description}
-
+\subsubsection{Set Formation Problem}
 \begin{frame}
-Description du problème, voyageur de commerce + consommation de ressources (essence, denrées, etc.)
-Rajouter exemple avec une ressource (comme dans l'article)
+	
 \end{frame}
 
-\subsection{Formulation}
+\section{Weaker models}
+
+
+\section{Gathering Problem}
 \begin{frame}
-Math formulation
 \end{frame}
-
-\section{Resolution}
-\subsection{One resource case}
+\section{Orientation Problem}
 \begin{frame}
-Put the formulation
-Explain the Binary Search Procedure
 \end{frame}
-
-\subsection{Joint probabilities}
+\section{Set Formation Problem}
 \begin{frame}
-Put the formulation
-Explain why we are looking for convexity, using the lectures
-Explain how we get the approximation (Theorem 4.1.2), saying that we used this method in classes
-
-\end{frame}
-
-\subsection{Individual relaxed probabilities}
-\begin{frame}
-Put the formulation
-Say problem is harder than the Joint probabilities, as we saw in class
-Explain how we solve it
-\end{frame}
-
-\subsection{Results}
-\begin{frame}
-Show results and analyze them (Why is this algorithm faster, why not, etc)
 \end{frame}
 
 \end{document}
