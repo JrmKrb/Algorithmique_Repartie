@@ -28,11 +28,12 @@
 
 \section{Introduction}
 \subsection{State of the Art}
-\subsubsection{Motivations}
 \begin{frame}
+	Motivations:
 \end{frame}
-\subsubsection{Related work}
+
 \begin{frame}
+	Related work:
 \end{frame}
 \subsection{Hypotheses}
 \begin{frame}
@@ -86,7 +87,73 @@
 
 
 \section{Gathering Problem}
+\subsection{Problem}
 \begin{frame}
+\textbf{Gathering problem:}
+
+	\begin{itemize}
+		\item<2-> We consider n nodes and k robots in an unoriented node
+		\item<3-> For any configuration C we not M(C) the maximum number of robots on one node
+	\end{itemize}
+	
+	\uncover<4->{
+	\begin{figure}[h]
+   		\includegraphics[width=0.3\textwidth]{images/random_configuration.png}
+	\end{figure}}
+\end{frame}
+
+\subsection{Algorithm}
+\begin{frame}
+	\begin{itemize}
+		\item<1-> If there is only once M(C)-node, then the robots "know" where to go
+		\item<2-> If there is multiple, the idea is to try to make them move one by one so that a tower node "wins the fight". We must find a why to elect a candidate.
+		\item<3-> If there are multiple candidates, find a way to make, in expectation, exactly one of them move
+		\item<4-> \textbf{Take care!} The scheduler is an enemy and will activate the robots in the worst way.
+	\end{itemize}
+	
+\end{frame}
+
+\begin{frame}
+
+	Let's consider the M(C) nodes:
+	\begin{itemize}
+		\item[Case 1]<2-> There is only one such node: the tower can be identified by the robots and they can get closer to the tower node.
+		\begin{itemize}
+			\item<3-> \textbf{The scheduler is an enemy!}
+			\item<3-> Less than M(C) nodes should move in the same direction! 
+		\end{itemize}
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+	\begin{itemize}
+		\item[Case 2] There are multiple such nodes:
+			\begin{figure}[h]
+   				\includegraphics[width=0.3\textwidth]{images/random_configuration.png}
+			\end{figure}
+			\uncover<2->{Take $h_{min}$ the minimal distance between a M(C)-robot node and a neighboring robot node. Take V the set of nodes at distance $h_{min}$ of a M(C)-node and R the robots on these nodes.}
+			\begin{itemize}
+				\item[Cas 2.1]<2->$|R| = 1$ - This robot gets to his closer M(C)-robot node. 
+				\item[Cas 2.2]<3->$|R| > 1$ - The robots move to their close M(C)-robot node with probability $\frac{1}{2|R|}$.
+			\end{itemize}
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+	\textbf{Algorithm - Details}	
+	Let's consider the M(C) nodes:
+	\begin{itemize}
+		\item[Case 2] There are multiple such nodes:
+			\uncover{Take $h_{min}$ the minimal distance between a M(C)-robot node and a neighboring robot node. Take V the set of nodes at distance $h_{min}$ of a M(C)-node and R the robots on these nodes.}
+			\begin{itemize}
+				\item[Cas 2.1]<2->$|R| = 1$ - This robot gets to his closer M(C)-robot node. 
+				\item[Cas 2.2]<3->$|R| > 1$ - The robots move to their close M(C)-robot node with probability $\frac{1}{2|R|}$.
+			\end{itemize}
+	\end{itemize}
+
 \end{frame}
 \section{Orientation Problem}
 \begin{frame}
