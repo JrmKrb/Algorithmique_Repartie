@@ -130,7 +130,7 @@
 	\begin{itemize}
 		\item[Case 2] There are multiple such nodes:
 			\begin{figure}[h]
-   				\includegraphics[width=0.3\textwidth]{images/random_configuration.png}
+   				\includegraphics[width=0.2\textwidth]{images/random_configuration.png}
 			\end{figure}
 			\uncover<2->{Take $h_{min}$ the minimal distance between a M(C)-robot node and a neighboring robot node. Take V the set of nodes at distance $h_{min}$ of a M(C)-node and R the robots on these nodes.}
 			\begin{itemize}
@@ -138,28 +138,37 @@
 				\item[Cas 2.2]<3->$|R| > 1$ - The robots move to their close M(C)-robot node with probability $\frac{1}{2|R|}$.
 			\end{itemize}
 	\end{itemize}
-
+	\uncover<4->{Complexity: $O(n$ log $k)$ rounds and $O(kn)$ moves.}
 \end{frame}
 
-\begin{frame}
 
-	\textbf{Algorithm - Details}	
-	Let's consider the M(C) nodes:
-	\begin{itemize}
-		\item[Case 2] There are multiple such nodes:
-			\uncover{Take $h_{min}$ the minimal distance between a M(C)-robot node and a neighboring robot node. Take V the set of nodes at distance $h_{min}$ of a M(C)-node and R the robots on these nodes.}
-			\begin{itemize}
-				\item[Cas 2.1]<2->$|R| = 1$ - This robot gets to his closer M(C)-robot node. 
-				\item[Cas 2.2]<3->$|R| > 1$ - The robots move to their close M(C)-robot node with probability $\frac{1}{2|R|}$.
-			\end{itemize}
-	\end{itemize}
 
-\end{frame}
+
+
 \section{Orientation Problem}
 \begin{frame}
 \end{frame}
+
+
+
+
+
 \section{Set Formation Problem}
 \begin{frame}
+	We can now apply the two previous algorithms to solve the \textbf{set formation problem}.
+\end{frame}
+
+\begin{frame}
+	\begin{itemize}
+		\item<1-> Solve the orientation algorithm for $l = |SET| - 1$,
+		\item<2-> Now that the ring is oriented, move the robots one by one
+	\end{itemize}
+	\uncover<3->{
+		\begin{figure}[h]
+   			\includegraphics[width=0.9\textwidth]{images/set_formation.png}
+		\end{figure}}
+	
+	\uncover<4->{Complexity: $O(($log $k + |SET|)n)$ rounds and $O(kn)$ moves.}
 \end{frame}
 
 
