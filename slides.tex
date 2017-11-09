@@ -15,7 +15,7 @@
 
 \usetheme{Warsaw}
 
-\title{Algorithmique Répartie}
+\title{On the self-stabilization of mobile oblivious robots in uniform rings}
 \author{Jeremy Krebs - Guillaume Soulié}
 \institute{Université Paris Saclay}
 \date{\today}
@@ -328,16 +328,13 @@
 
 \section{Orientation Problem}
 \begin{frame}
-	Algorithm for self oriented problem:
+	Algorithm for orientation problem:
 	\begin{itemize}
 		\item based on gathering algorithm
 		\pause
 		\item two phases algorithm
 		\pause
 		\item ! gathering or orientation ?
-		\pause
-		\item complexity: $\mathcal{O}((\log{k} + l)n)$ expected rounds 
-		and $\mathcal{O}(l(k+n))$ expected moves
 	\end{itemize}
 \end{frame}
 
@@ -353,7 +350,10 @@
 	Phase 2:
 	\includegraphics[width=0.9\textwidth]{images/orient2.png}
 	\pause
-	Reaches a configuration in $C_0$ in $\mathcal{O}(ln)$ expected rounds and $\mathcal{0}(l(k+n))$ expected moves.
+	Reaches a configuration in $C_0$ in $\mathcal{O}(ln)$ expected rounds and $\mathcal{O}(l(k+n))$ expected moves.
+	\pause
+	Global complexity: $\mathcal{O}((\log{k} + l)n)$ expected rounds 
+	and $\mathcal{O}(l(k+n))$ expected moves
 \end{frame}
 
 \section{Set Formation Problem}
@@ -390,5 +390,10 @@
 		\item<7-> Work with a more complex graph than a ring.
 	\end{itemize}
 	
+\end{frame}
+\begin{frame}
+	\begin{center}
+	\LARGE{Questions ?}
+	\end{center}
 \end{frame}
 \end{document}
