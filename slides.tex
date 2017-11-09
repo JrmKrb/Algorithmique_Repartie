@@ -110,9 +110,9 @@
 	Related work:
 	\begin{itemize}
 		\pause
-		\item Several work on \textbf{continuous model}. 
+		\item Several work on \textbf{continuous model.} 
 		\pause
-		\item other work on \textbf{discrete model}:
+		\item other work on \textbf{discrete model:}
 		\begin{itemize}
 			\pause
 			\item deterministic / stochastic
@@ -180,9 +180,91 @@
 		\pause
 		\item SSYNC Model - global-weak \& local-strong multiplicity
 	\end{itemize}
+	\pause
+	How to prove non existence of an algorithm ? \pause \textbf{play the scheduler}
 \end{frame}
-\subsection{ASYNC Model - global-strong multiplicity detection }
-\subsection{SSYNC Model - global-weak / local strong multiplicity detection }
+\subsection{ASYNC Model - global-strong multiplicity detection}
+\begin{frame}
+	(absurd) We assume that there is a algorithm $A$ which works with probability at least $p(k, n)$.  \\
+	\pause
+	We assume that we have a procedure $Proc(X)$ such as:
+	\begin{enumerate}
+		\item $Proc(X)$ activate each robot at least one
+		\pause
+		\item $Proc(X)$ is complete in finite time
+		\pause
+		\item if $P(X):=$ probability that there is no robot change during $Proc(X)$ execution,
+		then $\lim_{X->\inf}{P(X)} = 1$ 
+	\end{enumerate}
+	\pause
+	Probability that $A$ achieve gathering in $j$ cycle:
+	\begin{center}
+		\begin{math}
+			P^* < (1-P(X_1)) + (1-P(X_2)) + ... + (1-P(X_j)) < p
+		\end{math}
+		$\Box$
+	\end{center}
+\end{frame}
+\begin{frame}
+	Construct $Proc(X)$:
+	\begin{itemize}
+		\pause
+		\item one robot per node
+		\pause
+		\item 	$Q = +i\ (0 \leq i \leq n)$ indicates $(v_0, ..., v_{i-1})$ decides to move forward. \\
+		\pause We want to achieve $Q = +n$ or $Q = -n$.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	In $proc(X)$, scheduler repeat following steps:
+	\begin{itemize}
+		\item if $Q = 0$: look and compute phases on robot $r$ on $v_0$:
+		\begin{itemize}
+			\item if $r$ want to stay => $Q:=0$
+			\item elif $r$ want to move forward => $Q := 1$
+			\item elif $r$ want to move backward => $Q := -1$
+		\end{itemize}
+		\pause
+		\item if $Q = +i$: look and compute phases on robot $r$ on $v_{+i}$:
+		\begin{itemize}
+			\item if $r$ want to stay => $Q := +i$
+			\item if $r$ want to move forward => $Q := +(i+1)$
+			\item if $r$ want to move backward: move phase for $r$ and robot of $v_{+(i-1)}$
+			 => $Q := +(i-1)$.	
+		\end{itemize}
+		\pause
+		\item if $Q = -i$: ...
+	\end{itemize}
+	\pause
+	Stop when $Q = +n$ or $Q = -n$ (or $X$ steps).
+\end{frame}
+\begin{frame}
+	\begin{itemize}
+		\item prop 1 and 2 or clearly statisfied.
+		\pause
+		\item for prop 3:
+		\begin{itemize}
+			\item $P(Q_{h+1} -> Q_h + 1) = p_1$
+			\item $P(Q_{h+1} -> Q_h - 1) = p_2$
+			\item $P(Q_{h+1} -> Q_h) = 1 - p_1 - p_2$
+		\end{itemize}
+		\pause
+		This implies from any configuration $Q$, $Q = +/- n$ is achieved is less than $2n$
+		step with probability $p > p_1^{2n} + p_2^{2n}$.
+		\pause
+		\begin{center}
+			\begin{math}
+				P(X) \geq 1 - (1 - p_1^{2n} - p_2^{2n})^{\frac{X}{2n}}
+			\end{math} \\ 
+			\pause
+			\begin{math}
+				\lim\limits_{X \to \inf}{P(X)} = 1
+			\end{math}
+		\end{center}
+	\end{itemize}
+\end{frame}
+\subsection{SSYNC Model - global-weak / local strong multiplicity detection}
 
 \section{Gathering Problem}
 \subsection{Problem}
