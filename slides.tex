@@ -328,11 +328,33 @@
 
 \section{Orientation Problem}
 \begin{frame}
+	Algorithm for self oriented problem:
+	\begin{itemize}
+		\item based on gathering algorithm
+		\pause
+		\item two phases algorithm
+		\pause
+		\item ! gathering or orientation ?
+		\pause
+		\item complexity: $\mathcal{O}((\log{k} + l)n)$ expected rounds 
+		and $\mathcal{O}(l(k+n))$ expected moves
+	\end{itemize}
 \end{frame}
 
+\begin{frame} 
+	Phase 1:
+	\includegraphics[width=0.9\textwidth]{images/orient1.png}
+	\pause
+	Reaches a configuration $C_{f1}$ (if $l = 1$) or in $C_{f2}$ (if $l \geq 2$)
+	 in $\mathcal{O}(n \log{k})$ expected rounds and $\mathcal{O}(kn)$ expected moves.
+\end{frame}
 
-
-
+\begin{frame}
+	Phase 2:
+	\includegraphics[width=0.9\textwidth]{images/orient2.png}
+	\pause
+	Reaches a configuration in $C_0$ in $\mathcal{O}(ln)$ expected rounds and $\mathcal{0}(l(k+n))$ expected moves.
+\end{frame}
 
 \section{Set Formation Problem}
 \begin{frame}
