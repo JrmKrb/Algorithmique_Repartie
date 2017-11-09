@@ -272,7 +272,7 @@
 \textbf{Gathering problem:}
 
 	\begin{itemize}
-		\item<2-> We consider n nodes and k robots in an unoriented node
+		\item<2-> We consider n nodes and k robots in an unoriented ring
 		\item<3-> For any configuration C we not M(C) the maximum number of robots on one node
 	\end{itemize}
 	
@@ -284,11 +284,12 @@
 
 \subsection{Algorithm}
 \begin{frame}
+	Idea: 
 	\begin{itemize}
-		\item<1-> If there is only once M(C)-node, then the robots "know" where to go
-		\item<2-> If there is multiple, the idea is to try to make them move one by one so that a tower node "wins the fight". We must find a why to elect a candidate.
-		\item<3-> If there are multiple candidates, find a way to make, in expectation, exactly one of them move
-		\item<4-> \textbf{Take care!} The scheduler is an enemy and will activate the robots in the worst way.
+		\item If there is only once M(C)-node, then the robots "know" where to go
+		\item If there is multiple, the idea is to try to make them move one by one so that a tower node "wins the fight". We must find a why to elect a candidate.
+		\item If there are multiple candidates, find a way to make, in expectation, exactly one of them move
+		\item<2-> \textbf{Take care!} The scheduler is an enemy and will activate the robots in the worst way.
 	\end{itemize}
 	
 \end{frame}
@@ -314,8 +315,8 @@
 			\end{figure}
 			\uncover<2->{Take $h_{min}$ the minimal distance between a M(C)-robot node and a neighboring robot node. Take V the set of nodes at distance $h_{min}$ of a M(C)-node and R the robots on these nodes.}
 			\begin{itemize}
-				\item[Cas 2.1]<2->$|R| = 1$ - This robot gets to his closer M(C)-robot node. 
-				\item[Cas 2.2]<3->$|R| > 1$ - The robots move to their close M(C)-robot node with probability $\frac{1}{2|R|}$.
+				\item[Cas 2.1]<3->$|R| = 1$ - This robot gets to his closer M(C)-robot node. 
+				\item[Cas 2.2]<4->$|R| > 1$ - The robots move to their close M(C)-robot node with probability $\frac{1}{2|R|}$.
 			\end{itemize}
 	\end{itemize}
 	\uncover<4->{Complexity: $O(n$ log $k)$ rounds and $O(kn)$ moves.}
