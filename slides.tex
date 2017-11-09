@@ -1,5 +1,5 @@
 \documentclass{beamer}
-
+\usepackage{lmodern}
 \usepackage[frenchb]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -27,14 +27,93 @@
 
 
 \section{Introduction}
+
 \subsection{State of the Art}
 \begin{frame}
-	Motivations:
+	Background and Motivations:
+	\begin{itemize}
+		\pause
+		\item \textbf{mobile robot network} goal: achieve tasks by a team of 
+		mobile robot with weak capacity. 
+		\pause
+		\item \textbf{Pioneering work} Suzuki, I., \& Yamashita, M. (1999). Distributed anonymous mobile robots: Formation of geometric patterns.
+		\pause
+		\item it studies \textbf{self-stabilizing} algorithms for anonymous and oblivious robots in uniform ring network.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{images/init0.png}
+	\end{center}
+\end{frame}
+\begin{frame}
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{images/init1.png}
+	\end{center}
+\end{frame}
+\begin{frame}
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{images/init2.png}
+	\end{center}
+\end{frame}
+\begin{frame}
+	\begin{center}
+		\includegraphics[width=0.7\textwidth]{images/init3.png}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	Each robot repeat cycles. Cycle has three phases:
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{images/cycle1.png}
+	\end{center}
+\end{frame}
+\begin{frame}
+	Each robot repeat cycles. Cycle has three phases:
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{images/cycle2.png}
+	\end{center}
+\end{frame}
+\begin{frame}
+	Each robot repeat cycles. Cycle has three phases:
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{images/cycle3.png}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	Our Contribution: investigate the difficulty of probabilistic self-stabilizing algorithms 
+	using weak assumptions.
+	\begin{itemize}
+		\pause
+		\item no such algorithms on very weak condition (ASYNC or global-weak multiplicity)
+		\pause
+		\item we propose three algorithms:
+		\begin{description}
+			\item[self-stabilizing gathering algorithm]
+			\item[self-stabilizing orientation algorithm]
+			\item[self-stabilizing formation algorithm]
+		\end{description}  
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
 	Related work:
+	\begin{itemize}
+		\pause
+		\item Several work on \textbf{continuous model}. 
+		\pause
+		\item other work on \textbf{discrete model}:
+		\begin{itemize}
+			\pause
+			\item deterministic / stochastic
+			\pause
+			\item none of them are self stabilizing
+		\end{itemize}
+	\end{itemize}
 \end{frame}
+
 \subsection{Hypotheses}
 \begin{frame}
 	There are a few hypotheses on the robots:
