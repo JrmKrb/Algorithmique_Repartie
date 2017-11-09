@@ -5,6 +5,14 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 
+\addtobeamertemplate{navigation symbols}{}{%
+\usebeamerfont{footline}%
+\usebeamercolor[fg]{footline}%
+\hspace{1em}%
+\insertframenumber/\inserttotalframenumber
+}
+
+
 \usetheme{Warsaw}
 
 \title{Algorithmique Répartie}
